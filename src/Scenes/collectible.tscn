@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://jfgat0qy583j"]
+
+[ext_resource type="Script" path="res://Scenes/collectible.gd" id="1_3h3pl"]
+[ext_resource type="Texture2D" uid="uid://dl2nwv64rv5a8" path="res://Ruby1.png" id="1_ppv6h"]
+[ext_resource type="Texture2D" uid="uid://dxvttjt0fsp14" path="res://Ruby2.png" id="2_3malr"]
+[ext_resource type="Texture2D" uid="uid://bv34hhy2dompk" path="res://Ruby3.png" id="3_b4ued"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnrrc"]
+atlas = ExtResource("1_ppv6h")
+region = Rect2(0, 0, 23, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkjg5"]
+atlas = ExtResource("2_3malr")
+region = Rect2(0, 0, 23, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl5qc"]
+atlas = ExtResource("3_b4ued")
+region = Rect2(0, 0, 23, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7lij"]
+atlas = ExtResource("2_3malr")
+region = Rect2(0, 0, 23, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8a1a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnrrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkjg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl5qc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7lij")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8m8vu"]
+radius = 14.0357
+
+[node name="Collectible" type="Area2D"]
+position = Vector2(235, 283)
+script = ExtResource("1_3h3pl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-124.25, -65.25)
+scale = Vector2(1.23913, 1.35714)
+sprite_frames = SubResource("SpriteFrames_f8a1a")
+autoplay = "default"
+frame_progress = 0.3381
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-125, -67)
+shape = SubResource("CircleShape2D_8m8vu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

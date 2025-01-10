@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsijec73e32vu"]
+
+[ext_resource type="Script" path="res://quit.gd" id="1_m1oqj"]
+
+[node name="Quittomenu" type="Button"]
+offset_right = 180.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 30
+text = "Quit Game"
+script = ExtResource("1_m1oqj")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

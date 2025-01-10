@@ -1,0 +1,134 @@
+[gd_scene load_steps=4 format=3 uid="uid://bknug75fwoamr"]
+
+[ext_resource type="Script" path="res://Scenes/menu_main.gd" id="1_urdq8"]
+[ext_resource type="Texture2D" uid="uid://cpfv6rafvk46m" path="res://Scenes/RealRect.png" id="2_bg1bq"]
+[ext_resource type="Texture2D" uid="uid://tqqsekpu8w63" path="res://Scenes/title_del.png" id="3_llyuc"]
+
+[node name="MenuMain" type="Node"]
+script = ExtResource("1_urdq8")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -8.0
+offset_right = 19.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg1bq")
+
+[node name="level1" type="Button" parent="TextureRect2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 291.0
+offset_top = 300.0
+offset_right = -634.0
+offset_bottom = -261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 1-1"
+
+[node name="level2" type="Button" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = -25.0
+offset_right = 291.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 1-2"
+
+[node name="level3" type="Button" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = 101.0
+offset_right = -42.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 2-1"
+
+[node name="level4" type="Button" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = 98.0
+offset_right = 296.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 2-2"
+
+[node name="level5" type="Button" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = 219.0
+offset_right = -42.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 3-1"
+
+[node name="level6" type="Button" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = 214.0
+offset_right = 298.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 3-2"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -229.0
+offset_right = 222.0
+offset_bottom = 276.0
+grow_horizontal = 2
+texture = ExtResource("3_llyuc")
+
+[connection signal="pressed" from="TextureRect2/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="TextureRect2/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="TextureRect2/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="TextureRect2/level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="TextureRect2/level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="TextureRect2/level6" to="." method="_on_level_6_pressed"]
